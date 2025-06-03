@@ -7,6 +7,7 @@ namespace gottaCatchEmAll
     {
         public static void ShowPokemonMenu(List<Pokemon> pokemonList)
         {
+            // Display the Pokémon selection menu and allow the user to choose a Pokémon to view its details
             while (true)
             {
                 Console.WriteLine("Select a Pokémon to view its details (enter 0 to exit):");
@@ -21,7 +22,7 @@ namespace gottaCatchEmAll
                 {
                     if (selectedIndex == 0)
                     {
-                        Console.WriteLine("Exiting Pokémon info viewer.");
+                        Console.WriteLine("Exiting Pokémon UI.");
                         break;
                     }
                     if (selectedIndex >= 1 && selectedIndex <= pokemonList.Count)
@@ -29,7 +30,7 @@ namespace gottaCatchEmAll
                         Pokemon selectedPokemon = pokemonList[selectedIndex - 1];
                         selectedPokemon.DisplayInfo();
                         Console.WriteLine();
-
+                        // Loop to allow the user to perform actions on the selected Pokémon
                         while (true)
                         {
                             Console.WriteLine($"What would you like to do with {selectedPokemon.Name}?");
@@ -78,6 +79,7 @@ namespace gottaCatchEmAll
                             {
                                 selectedPokemon.RandomAttack();
                             }
+                            // Check if the Pokémon can evolve and handle evolution or level addition
                             else if (actionInput == "3" && selectedPokemon is IEvolvable evolvableOption)
                             {
                                 if (!selectedPokemon.IsEvolved && evolvableOption.CanEvolve)
@@ -100,6 +102,7 @@ namespace gottaCatchEmAll
                                     Console.WriteLine($"{selectedPokemon.Name} is already evolved and cannot evolve or gain more levels.");
                                 }
                             }
+                            // Check if the Pokémon can evolve and handle evolution or level addition for the second option
                             else if (actionInput == "4" && selectedPokemon is IEvolvable evolvableOption2 && !selectedPokemon.IsEvolved && evolvableOption2.CanEvolve)
                             {
                                 // Add levels
@@ -111,6 +114,7 @@ namespace gottaCatchEmAll
                                     Console.WriteLine($"{selectedPokemon.Name} is now level {selectedPokemon.Level}.");
                                 }
                             }
+                            // Return to Pokémon selection
                             else if (actionInput == "0")
                             {
                                 break;
@@ -128,7 +132,7 @@ namespace gottaCatchEmAll
                     }
                     else
                     {
-                        Console.WriteLine("Invalid choice. Try again.");
+                        Console.WriteLine("Invalid input. Try again.");
                     }
                 }
                 else

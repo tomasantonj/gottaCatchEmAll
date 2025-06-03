@@ -9,17 +9,19 @@ namespace gottaCatchEmAll
 {
     internal class Pokemon : IEvolvable
     {
-        public string Name { get; protected set; }
-        public int Level { get; protected set; }
+        public string Name { get; private set; }
+        public int Level { get; private set; }
         public ElementType ElementType { get; private set; }
         public List<Attack> Attacks { get; private set; }
         // EvolvedName property to hold the name of the Pokémon after evolution
         public string EvolvedName { get; private set; } 
         // Declare the required level for evolution & boolean property to check if the Pokémon can evolve to be used in the interface
         public const int requiredLevel = 16;
+        // Boolean property to check if the Pokémon can evolve
         public bool CanEvolve => Level >= requiredLevel;
+        // Boolean property to check if the Pokémon is evolved
         public bool IsEvolved => !string.IsNullOrWhiteSpace(EvolvedName) && Name == EvolvedName && Level >= requiredLevel;
-
+        // Random instance to generate random numbers for attacks
         private static readonly Random _random = new Random();
 
         // Constructor to initialize the Pokémon with its name, level, element type, attacks, and optional evolved names and checks for valid inputs
