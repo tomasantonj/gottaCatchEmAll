@@ -6,6 +6,7 @@ namespace gottaCatchEmAll
     {
         public static List<Pokemon> GetTestPokemonList()
         {
+            // TODO: import ElementTypes so we dont have to access it through the static class
             // Fire
             var fireAttack1 = new Attack { Name = "Flame Burst", Type = ElementTypes.ElementType.Fire, BasePower = 50 };
             var fireAttack2 = new Attack { Name = "Fire Spin", Type = ElementTypes.ElementType.Fire, BasePower = 40 };

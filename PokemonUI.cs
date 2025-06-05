@@ -28,7 +28,7 @@ namespace gottaCatchEmAll
                     if (selectedIndex >= 1 && selectedIndex <= pokemonList.Count)
                     {
                         Pokemon selectedPokemon = pokemonList[selectedIndex - 1];
-                        selectedPokemon.DisplayInfo();
+                        selectedPokemon.DisplayPokemonInfo();
                         Console.WriteLine();
                         // Loop to allow the user to perform actions on the selected Pokémon
                         while (true)
@@ -126,7 +126,7 @@ namespace gottaCatchEmAll
 
                             Console.WriteLine();
                             // Refresh info after any action
-                            selectedPokemon.DisplayInfo();
+                            selectedPokemon.DisplayPokemonInfo();
                             Console.WriteLine();
                         }
                     }

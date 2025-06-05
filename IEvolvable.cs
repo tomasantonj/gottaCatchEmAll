@@ -10,6 +10,8 @@ namespace gottaCatchEmAll
     internal interface IEvolvable
     {
         bool CanEvolve { get; }
+
+        void DisplayPokemonInfo();
         void Evolve();
     }
 

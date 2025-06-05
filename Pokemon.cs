@@ -52,7 +52,7 @@ namespace gottaCatchEmAll
             int index = _random.Next(Attacks.Count);
             Attacks[index].Use(Level);
         }
-        // Method to perform an attack, allowing the user to choose from available attacks
+        // Method to perform an attack, allowing the user to choose from available attacks and keeping the loop active until user is done
         public void Attack()
         {
             Console.WriteLine($"Choose an attack for {Name}:");
@@ -96,8 +96,8 @@ namespace gottaCatchEmAll
                 Console.WriteLine($"{Name} cannot evolve yet!");
             }
         }
-
-        public void DisplayInfo()
+        // Method to display the Pokémon's information, including its name, level, available attacks, and evolution status
+        public void DisplayPokemonInfo()
         {
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Level: {Level}");

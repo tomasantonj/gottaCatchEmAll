@@ -11,10 +11,14 @@ namespace gottaCatchEmAll
             // Run pokemon UI
             PokemonUI.ShowPokemonMenu(pokemonList);
             // TODO
-            // - review weapon selections and output, not sure if it works as intended
-            // - review class properties and methods, not sure if they got the correct encapsulation and access modifiers- should be able to make them less exposed
-            // - add some code comments to make it easier to understand in a week or two
-            // - Answer the questions given in the README.md file
+            // - Use the getters and setters on pokemons, let user add new pokemons, remove pokemons, etc.
+            // - Add a save/load functionality to save the pokemon list to a file and load it back
+            // - Add a feature to sort the pokemon list by level or type
+            // - Add a feature to search for a pokemon by name
+            // - Add a feature to filter the pokemon list by type
+            // - Add a feature to display the top 5 strongest pokemons based on their level and attacks
+            // - Resolve all the warnings
+            // - Move all Todos to a TODO-file :)
 
         }
     }
